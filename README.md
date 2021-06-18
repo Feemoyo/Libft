@@ -1,2 +1,2 @@
 # Libft
-A
+sim
