@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/28 13:24:31 by fmoreira          #+#    #+#              #
-#    Updated: 2021/06/20 23:57:26 by fmoreira         ###   ########.fr        #
+#    Updated: 2021/06/21 21:06:34 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	= ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
 		ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strnstr.c \
 		ft_strncmp.c ft_calloc.c ft_atoi.c ft_strdup.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_strjoin.c ft_substr.c \
-		ft_strtrim.c ft_strmapi.c ft_itoa.c
+		ft_strtrim.c ft_strmapi.c ft_itoa.c ft_split.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -28,9 +28,9 @@ RM		= rm -rf
 
 CFLAGS	= -Wall -Wextra -Werror
 
-LIB1	= ar -rcs # cria o arquivo libft.a
+LIB1	= ar -rcs
 
-LIB2	= ranlib # indexação na biblioteca
+LIB2	= ranlib
 
 INCLUDE = .
 
@@ -39,7 +39,7 @@ PROGRAM = alo
 all:		${NAME}
 
 .c.o:	
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -fPIC -c $< -o ${<:.c=.o}
 
 clean:
 		${RM} ${OBJS}
@@ -50,6 +50,9 @@ fclean:	clean
 ${NAME}:	${OBJS}
 			$(LIB1) $(NAME) $(OBJS)
 			$(LIB2) $(NAME)
+
+so:
+		gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 compile:	fclean all
 		$(CC) -static main.c -L. -I ${INCLUDE} -lft ${CFLAGS} -lbsd -o ${PROGRAM}
