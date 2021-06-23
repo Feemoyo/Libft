@@ -6,17 +6,17 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:57:48 by fmoreira          #+#    #+#             */
-/*   Updated: 2021/06/18 16:51:19 by fmoreira         ###   ########.fr       */
+/*   Updated: 2021/06/22 19:48:52 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != 0 && *s != c)
+	while (*s != 0 && *s != (char)c)
 	{
 		s++;
 	}
-	if (*s == c)
+	if (*s == (char)c)
 	{
 		return ((char *)s);
 	}

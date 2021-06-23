@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 21:05:11 by fmoreira          #+#    #+#             */
-/*   Updated: 2021/06/22 17:33:47 by fmoreira         ###   ########.fr       */
+/*   Updated: 2021/06/22 19:24:11 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,17 @@ char	**ft_split(char const *s, char c)
 	char	**strs;
 	size_t	i;
 	size_t	j;
-	size_t	len;
 	int		index;
 
 	strs = ft_calloc((ft_number_words(s, c) + 1), sizeof(char *));
 	i = 0;
 	j = 0;
 	index = 0;
-	len = ft_strlen(s);
-	while (i <= len)
+	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;
-		else if ((s[i] == c || i == len) && index >= 0)
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
 			if ((size_t)index < i)
 				strs[j++] = ft_word_dup(s, index, i);
