@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 18:00:48 by fmoreira          #+#    #+#             */
-/*   Updated: 2021/06/22 16:29:31 by fmoreira         ###   ########.fr       */
+/*   Updated: 2021/06/23 17:25:32 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ static char	*ft_createstr(long int new_n, int i, int verify_n)
 	str = (char *)ft_calloc(i + 1, sizeof(char));
 	if (!str)
 		return (0);
-	if (verify_n)
-	{
-		str[0] = 45;
-	}
-	str[i--] = 0;
+
 	while (i >= 0)
 	{
 		aux = new_n % 10;
@@ -32,7 +28,7 @@ static char	*ft_createstr(long int new_n, int i, int verify_n)
 		str[i] = aux + '0';
 		i--;
 		if (i == 0 && verify_n)
-			i--;
+			str[i--] = 45;
 	}
 	return (str);
 }
