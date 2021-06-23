@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 19:35:58 by fmoreira          #+#    #+#             */
-/*   Updated: 2021/06/18 18:43:54 by fmoreira         ###   ########.fr       */
+/*   Updated: 2021/06/23 19:56:02 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	j = ft_strlen(s + start);
 	if (!s)
 		return (0);
-	if (j < start)
+	if (ft_strlen(s) < start)
 		return (ft_calloc(1, sizeof(char)));
 	if (j < len)
 		len = j;
