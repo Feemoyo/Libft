@@ -6,7 +6,7 @@
 #    By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/28 13:24:31 by fmoreira          #+#    #+#              #
-#    Updated: 2021/06/22 19:40:12 by fmoreira         ###   ########.fr        #
+#    Updated: 2021/06/23 20:19:22 by fmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,6 @@ LIB1	= ar -rcs
 
 LIB2	= ranlib
 
-INCLUDE = .
-
-PROGRAM = alo
-
 all:		${NAME}
 
 .c.o:	
@@ -50,12 +46,6 @@ fclean:	clean
 ${NAME}:	${OBJS}
 			$(LIB1) $(NAME) $(OBJS)
 			$(LIB2) $(NAME)
-
-so:
-		gcc -nostartfiles -shared -o libft.so $(OBJS)
-
-compile:	fclean all
-		$(CC) -static main.c -L. -I ${INCLUDE} -lft ${CFLAGS} -lbsd -o ${PROGRAM}
 
 re:			fclean all
 
