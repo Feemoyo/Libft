@@ -6,15 +6,13 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:01:08 by fmoreira          #+#    #+#             */
-/*   Updated: 2021/05/31 19:59:36 by fmoreira         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:24:43 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-	{
 		return (1);
-	}
 	return (0);
 }
