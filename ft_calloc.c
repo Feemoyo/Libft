@@ -6,7 +6,7 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 19:36:34 by fmoreira          #+#    #+#             */
-/*   Updated: 2021/06/17 20:28:01 by fmoreira         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:03:52 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	i = malloc(nmemb * size);
 	if (i == 0)
-	{
 		return (0);
-	}
 	ft_bzero(i, nmemb * size);
 	return (i);
 }
