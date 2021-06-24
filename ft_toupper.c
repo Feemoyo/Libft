@@ -6,13 +6,13 @@
 /*   By: fmoreira <fmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:26:04 by fmoreira          #+#    #+#             */
-/*   Updated: 2021/06/24 14:25:06 by fmoreira         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:30:43 by fmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c >= 97 && c <=122)
+	if (c >= 97 && c <= 122)
 		return (c - 32);
 	return (c);
 }
